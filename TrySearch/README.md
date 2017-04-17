@@ -8,7 +8,7 @@ The resource sites are
 
 Searches multiple resources sites parallely for a single request made to your API.
 
-Reference Docs :
+#### Reference Docs :
 
 1. https://developers.google.com/custom-search/json-api/v1/using_rest
 2. https://duckduckgo.com/api
@@ -16,7 +16,7 @@ Reference Docs :
 
 ##### Test Example:
 
-    curl “http://localhost:5000.com/the+dark+knight” -XGET
+    curl “http://localhost:5000/the+dark+knight” -XGET
     
 ##### Output
 
