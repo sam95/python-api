@@ -14,4 +14,4 @@ Everytime we try to re-run the app, we need to insure the `index.html` file cont
 
 #### Screenshot
 
-![ScreenShot](http://imgur.com/a/o4lcU)
+![ScreenShot](screenshot.png)
