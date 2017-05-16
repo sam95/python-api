@@ -11,3 +11,7 @@ Everytime we try to re-run the app, we need to insure the `index.html` file cont
 #### Running the app
 
     python app.py
+
+#### Screenshot
+
+![ScreenShot](http://imgur.com/a/o4lcU)
