@@ -1,0 +1,5 @@
+bs4
+redis==2.10.5
+CherryPy==10.2.1
+BeautifulSoup==3.2.1
+beautifulsoup4==4.5.0
