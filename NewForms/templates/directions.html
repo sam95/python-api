@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function  fillme(ids, str){
+            var myvalue = document.getElementById(ids).value;
+            var xhr = new XMLHttpRequest();
+            //https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Vict&types=geocode&language=en&key=AIzaSyAsUFM3HrUNMhmPrqE-5_2rJz0NpyH6Jc8
+            xhr.open("get", "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+myvalue+"&language=en&key=AIzaSyAsUFM3HrUNMhmPrqE-5_2rJz0NpyH6Jc8", true);
+            xhr.send();
+            xhr.onload = function(){
+                var json = xhr.responseText;
+                var jsar = JSON.parse(json);
+                var catOptions = "";
+                for(var i=0;i<jsar.predictions.length;i++){
+                    catOptions += "<option value=\""+ jsar.predictions[i].description + "\">";
+                }
+                if(catOptions){
+                    document.getElementById(str).innerHTML = catOptions;
+                }
+            };
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h4>Hi {{ name }}</h4>
+    <label>From</label>
+    <form action="http://localhost:5000/quote_process" method="post">
+        <input id = "locations" list="from" name="myfrom" onkeyup="fillme('locations', 'from');"/>
+        <datalist id="from">
+        </datalist>
+        <label>  To  </label>
+        <input id = "locators" list="to" name="myto" onkeyup="fillme('locators', 'to');"/>
+        <datalist id="to">
+        </datalist>
+        <br/>
+        <br/>
+        <label>Choose Date </label>
+        <input type="date" name="bday" min="1900-01-01"><br><br>
+        <input type="submit">
+    </form>
+</head>
+<body>
+
+</body>
+</html>
